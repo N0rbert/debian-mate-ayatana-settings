@@ -1,0 +1,16 @@
+#!/bin/sh
+
+mkdir -p /usr/local/bin/
+
+# FIXME temporary workaround for https://github.com/ubuntu-mate/mate-tweak/issues/94
+if [ -f "/usr/libexec/mate-volume-control-applet" ]; then
+  ln -sfv /usr/libexec/mate-volume-control-applet /usr/local/bin/mate-volume-control-applet
+fi
+
+# FIXME move out the way the default lightdm-xsession.desktop until appearance of GSettings hide-default-xsession (arctica-greeter >= 0.99.4.0)
+if [ -f "/usr/share/xsessions/lightdm-xsession.desktop" ]; then 
+  mv -fv /usr/share/xsessions/lightdm-xsession.desktop /usr/share/xsessions/lightdm-xsession.desktop_backup || true
+fi
+
+#DEBHELPER#
+exit 0

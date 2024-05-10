@@ -2,5 +2,4 @@ debian/*.debhelper
 debian/debhelper-build-stamp
 debian/files
 debian/*.substvars
-debian/ubuntu-mate-default-settings/
-debian/ubuntu-mate-live-settings/
+debian/debian-mate-ayatana-settings/

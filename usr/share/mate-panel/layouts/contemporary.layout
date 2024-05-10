@@ -20,7 +20,7 @@ position=10
 toplevel-id=top
 applet-iid=AppmenuAppletFactory::AppmenuApplet
 object-type=applet
-relative-to-edge=end
+panel-right-stick=false
 locked=true
 
 [Object notification-area]
@@ -28,7 +28,7 @@ object-type=applet
 applet-iid=NotificationAreaAppletFactory::NotificationArea
 toplevel-id=top
 position=10
-relative-to-edge=end
+panel-right-stick=true
 locked=true
 
 [Object indicatorappletcomplete]
@@ -36,7 +36,7 @@ object-type=applet
 applet-iid=IndicatorAppletCompleteFactory::IndicatorAppletComplete
 toplevel-id=top
 position=0
-relative-to-edge=end
+panel-right-stick=true
 locked=true
 
 [Object show-desktop]

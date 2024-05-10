@@ -1,3 +1,9 @@
+debian-mate-ayatana-settings (24.05~debian~1.0) jammy; urgency=medium
+
+  * Initial version for Debian with MATE and Ayatana Indicators
+  
+ -- Norbert X <nrbrtx@gmail.com>  Sun, 10 May 2024 13:33:37 +0300
+
 ubuntu-mate-settings (24.04.4) noble; urgency=medium
 
   * Add autostart for ubuntu-desktop-bootstrap. (LP: #2060406)

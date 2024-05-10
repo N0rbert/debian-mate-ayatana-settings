@@ -20,7 +20,7 @@ object-type=applet
 [Object firefox]
 locked=true
 position=20
-launcher-location=/var/lib/snapd/desktop/applications/firefox_firefox.desktop
+launcher-location=/usr/share/applications/firefox-esr.desktop
 toplevel-id=bottom
 object-type=launcher
 menu-path=applications:/

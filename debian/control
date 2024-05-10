@@ -1,30 +1,219 @@
-Source: ubuntu-mate-settings
+Source: debian-mate-ayatana-settings
 Section: x11
 Priority: optional
-Maintainer: Ubuntu MATE Team <ubuntu-mate-dev@lists.launchpad.net>
+Maintainer: Norbert X <nrbrtx@gmail.com>
 Build-Depends: debhelper (>= 11),
 Standards-Version: 4.1.3
-Homepage: https://github.com/ubuntu-mate/ubuntu-mate-settings
-Vcs-Git: https://github.com/ubuntu-mate/ubuntu-mate-settings.git
-Vcs-Browser: https://github.com/ubuntu-mate/ubuntu-mate-settings
+Homepage: https://github.com/N0rbert/debian-mate-ayatana-settings
+Vcs-Git: https://github.com/N0rbert/debian-mate-ayatana-settings.git
+Vcs-Browser: https://github.com/N0rbert/debian-mate-ayatana-settings
 
-Package: ubuntu-mate-default-settings
+Package: debian-mate-ayatana-settings
 Architecture: all
 Depends: desktop-file-utils,
+# Main Ayatana and MATE Tweak related part
          im-config,
          libglib2.0-bin,
          fonts-ubuntu,
+         task-mate-desktop,
+         debian-mate-default-settings,
+         mate-media,
+         mate-tweak,
+         mate-indicator-applet,
+         plank,
+         tilda,
+         mate-hud,
+         mate-applet-appmenu,
+         mate-applet-brisk-menu,
+         desktop-base,
+         sound-theme-freedesktop,
+         yaru-theme-gtk,
+         yaru-theme-icon,
+         yaru-theme-sound,
+         yaru-theme-unity,
+         ayatana-indicator-application,
+         ayatana-indicator-datetime,
+         ayatana-indicator-messages,
+         ayatana-indicator-notifications,
+         ayatana-indicator-power,
+         ayatana-indicator-session,
+         ayatana-indicator-sound,
+         ayatana-settings,
+# Extra depends of ubuntu-mate-packages
+         foomatic-db-compressed-ppds,
+         ghostscript-x,
+         openprinting-ppds,
+         gnome-session-canberra,
+         inputattach,
+         rfkill,
+         spice-vdagent,
+         wireless-tools,
+         xdg-user-dirs-gtk,
+         fonts-noto-color-emoji,
+         libreoffice-gnome,
+         libreoffice-style-elementary,
+         wpasupplicant,
+# Extra depends from ubuntu-standard
+         ed,
+# Extra depends from elsewhere
+         python3-launchpadlib,
+         arctica-greeter,
+         arctica-greeter-theme-debian,
          ${misc:Depends},
-Replaces: policykit-desktop-privileges-ubuntu-mate,
-          compiz-mate (<< 1:0.9.13.1+19.04.20190208-0ubuntu1~),
-Suggests: mate-desktop-environment-core (>= 1.14.0),
-Conflicts: debian-mate-default-settings,
-           mint-mate-default-settings,
-Description: Default settings for Ubuntu MATE
- Various system settings tailored for Ubuntu MATE.
-
-Package: ubuntu-mate-live-settings
-Architecture: all
-Depends: ${misc:Depends},
-Description: Default settings for Ubuntu MATE live CD
- Various system settings tailored for Ubuntu MATE live CD.
+# Currently ignored depends from UM:
+# * cryptsetup
+#
+# Currently ignored depends from ubuntu-standard:
+# * info
+Suggests: ayatana-indicator-bluetooth,
+          ayatana-indicator-display,
+          ayatana-indicator-keyboard,
+          ayatana-indicator-printers,
+          ayatana-webmail,
+          compiz-mate,
+          libreoffice
+# Stuff from UM moved from recommends
+# (currently empty list)
+#
+Recommends: 
+## Disabled recommends
+#  * arctica-greeter-guest-session - causes openbox install
+#  * brltty-x11
+#
+# GUI Applications
+## Accessories
+            deja-dup,
+            gnome-clocks,
+            gnome-disk-utility,
+            gucharmap,
+            gnome-maps,
+            seahorse,
+            redshift-gtk,
+            gnome-weather,
+## Graphics
+            simple-scan,
+            shotwell,
+## Internet
+            transmission-gtk,
+## Office
+            evolution,
+            evolution-ews,
+## Sound & video
+            vlc,
+            rhythmbox,
+            webcamoid,
+## System tools
+            gdebi,
+            gnome-firmware,
+## Universal access
+            magnus,
+            onboard,
+## System
+            gufw,
+            mozo,
+            mate-user-admin,
+            system-config-printer,
+            synaptic, apt-xapian-index,
+            caja-open-terminal,
+            bash-completion,
+            software-properties-gtk,
+            gnome-package-updater,
+            blueman,
+            htop,
+            caja-seahorse,
+            caja-eiciel,
+# Other stuff
+## Various utils
+            zenity,
+            caja-admin,
+            caja-gtkhash,
+            caja-mediainfo,
+            caja-rename,
+            caja-sendto,
+            caja-wallpaper,
+            mate-sensors-applet,
+            mate-window-buttons-applet,
+            mate-window-menu-applet,
+            mate-window-title-applet,
+            avahi-autoipd,
+            neofetch,
+            cups-bsd,
+            gamemode,
+            gnome-menus,
+            hplip,
+            inxi,
+            memtest86+,
+            network-manager-openvpn-gnome,
+            network-manager-pptp-gnome,
+            smbclient,
+            flatpak,
+## Various hardware-related stuff like drivers, etc.
+            acpi-support,
+            bluetooth,
+            bluez-cups,
+            firmware-linux,
+            firmware-realtek,
+            firmware-iwlwifi,
+            ideviceinstaller,
+            ifuse,
+            lm-sensors,
+            pcmciautils,
+            pppoeconf,
+            printer-driver-brlaser,
+            printer-driver-c2esp,
+            printer-driver-foo2zjs,
+            printer-driver-foo2zjs-common,
+            printer-driver-gutenprint,
+            printer-driver-hpcups,
+            printer-driver-m2300w,
+            printer-driver-min12xxw,
+            printer-driver-pnm2ppa,
+            printer-driver-postscript-hp,
+            printer-driver-ptouch,
+            printer-driver-pxljr,
+            printer-driver-sag-gdi,
+            printer-driver-splix,
+            pulsemixer,
+            thermald,
+## Recommends of ubuntu-standard
+            command-not-found,
+            ethtool,
+            friendly-recovery,
+            ftp,
+            hdparm,
+            iputils-tracepath,
+            irqbalance,
+            lshw,
+            numactl,
+            strace,
+            sysstat,
+            tcpdump,
+            telnet,
+            uuid-runtime,
+## Recommends of linux-firmware and linux-generic
+            firmware-sof-signed, intel-microcode,
+## Recommends from elsewhere
+            aptitude, debsums, mc, ncdu, gsmartcontrol,
+            printer-driver-cups-pdf,
+            curl, btrfs-progs, cifs-utils, dmraid, exfat-fuse, hfsprogs, jfsutils, kpartx, reiserfsprogs, xfsprogs,
+            wmctrl, x-tile
+## Stuff moved here from UM depends
+# (currently empty list)
+#
+# Missed stuff and comments
+## The following packages are not available on Debian:
+## alsa-base, apturl, deja-dup-caja, folder-color-caja, mate-optimus,
+## ayatana-indicator-a11y, kerneloops, nvidia-prime,
+## evolution-rss, initramfs-tools-bin, libreoffice-ogltrans,
+## libreoffice-pdfimport, libreoffice-style-yaru, linux-sound-base,
+## policykit-desktop-privileges, session-migration, gnome-control-center-faces
+#
+#
+### The following replacements has been made:
+### celluloid -> vlc
+#
+#
+Conflicts: mint-mate-default-settings,
+           ubuntu-mate-default-settings
+Description: Default settings for Debian with MATE and Ayatana Indicators
+ Various system settings tailored for Debian with MATE and Ayatana Indicators.

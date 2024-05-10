@@ -1,9 +1,0 @@
-{
-  "policies": {
-    "Homepage": {
-      "URL": "https://start.ubuntu-mate.org/",
-      "Locked": false,
-      "StartPage": "homepage"
-    }
-  }
-}

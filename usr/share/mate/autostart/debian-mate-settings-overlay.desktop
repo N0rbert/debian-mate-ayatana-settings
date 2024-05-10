@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name[en_GB]=Settings Overlay
+Name=Settings Overlay
+Comment[en_GB]=Debian MATE Settings Overlay
+Comment=Debian MATE Settings Overlay
+Exec=/usr/lib/debian-mate/debian-mate-settings-overlay
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=
+X-MATE-Autostart-enabled=true
+X-MATE-Autostart-Phase=Initialization
+NoDisplay=true

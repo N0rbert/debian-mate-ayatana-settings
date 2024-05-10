@@ -1,0 +1,323 @@
+[org.ArcticaProject.arctica-greeter]
+draw-grid=false
+draw-user-backgrounds=false
+enable-hidpi='auto'
+font-name='Ubuntu 11'
+icon-theme-name='Yaru-prussiangreen-dark'
+high-contrast=false
+show-hostname=true
+indicators=['ug-accessibility', 'org.ayatana.indicator.session', 'org.ayatana.indicator.datetime', 'org.ayatana.indicator.power', 'org.ayatana.indicator.sound', 'ayatana-application']
+logo=''
+only-on-monitor='auto'
+onscreen-keyboard=false
+play-ready-sound=true
+screen-reader=false
+show-hostname=true
+theme-name='Yaru-prussiangreen-dark'
+xft-antialias=true
+xft-dpi=96
+xft-hintstyle='hintslight'
+xft-rgba='rgb'
+#hide-default-xsession=true #FIXME, waiting for arctica-greeter >= 0.99.4.0
+
+[org.gnome.desktop.interface:MATE]
+cursor-theme='Yaru'
+document-font-name='Ubuntu 11'
+font-name='Ubuntu 11'
+gtk-theme='Yaru-olive'
+icon-theme='Yaru-olive'
+monospace-font-name='Ubuntu Mono 13'
+
+[org.gnome.desktop.wm.preferences:MATE]
+button-layout=':minimize,maximize,close'
+theme='Yaru'
+titlebar-font='Ubuntu Bold 11'
+titlebar-uses-system-font=false
+
+[org.mate.caja.desktop]
+font='Ubuntu 11'
+
+[org.mate.interface]
+icon-theme='Yaru-olive'
+gtk-decoration-layout=':minimize,maximize,close'
+gtk-theme='Yaru-olive'
+font-name='Ubuntu 11'
+document-font-name='Ubuntu 11'
+monospace-font-name='Ubuntu Mono 13'
+
+[org.mate.dictionary]
+print-font='Ubuntu 12'
+
+[com.solus-project.brisk-menu]
+rollover-activate=true
+search-position='top'
+
+[net.launchpad.plank.dock.settings]
+dock-items=['desktop.dockitem', 'firefox-esr.dockitem', 'caja-browser.dockitem', 'matecc.dockitem', 'mate-system-monitor.dockitem', 'mate-terminal.dockitem', 'mate-calc.dockitem', 'clock.dockitem', 'trash.dockitem']
+hide-mode='window-dodge'
+show-dock-item=false
+theme='Yaru-light'
+zoom-enabled=true
+zoom-percent=150
+
+[org.appmenu.gtk-module]
+blacklist=['appmenu-mate', 'mate-hud', 'mate-indicator-applet','mate-indicator-applet-appmenu','mate-indicator-applet-complete', 'mate-menu', 'mate-panel']
+whitelist=['firefox-esr', 'thunderbird']
+
+[org.ayatana.indicator.datetime]
+alarm-default-sound='/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga'
+calendar-default-sound='/usr/share/sounds/Yaru/stereo/message.oga'
+
+[org.ayatana.indicator.notifications]
+filter-list=['Spotify', 'NetworkManager', 'MATE Tweak']
+
+[org.ayatana.indicator.session]
+suppress-restart-menuitem=true
+
+[org.gnome.crypto.pgp]
+keyservers=['hkp://keyserver.ubuntu.com:11371', 'hkp://pool.sks-keyservers.net', 'ldap://keyserver.pgp.com']
+
+[org.gnome.evolution.mail]
+monospace-font='Ubuntu Mono 12'
+search-gravatar-for-photo=true
+show-sender-photo=true
+variable-width-font='Ubuntu 12'
+
+[org.gnome.evolution.plugin.external-editor]
+command='pluma'
+
+[org.gnome.rhythmbox.encoding-settings]
+media-type-presets={'audio/x-vorbis':'Ubuntu', 'audio/mpeg':'Ubuntu'}
+
+[org.gnome.rhythmbox.rhythmdb:MATE]
+monitor-library=true
+
+[org.gnome.rhythmbox.plugins:MATE]
+active-plugins=['alternative-toolbar', 'artsearch', 'audiocd','audioscrobbler','daap','dbus-media-server','generic-player','ipod','iradio','mmkeys','mpris','mtpdevice','notification','power-manager']
+
+[org.gnome.Charmap:MATE]
+font='Ubuntu 22'
+
+[org.mate.applications-at-mobility]
+exec='onboard'
+
+[org.mate.applications-at-visual]
+exec='orca'
+
+[org.mate.applications-office.calendar]
+exec='evolution'
+
+[org.mate.applications-office.tasks]
+exec='evolution'
+
+[org.mate.eom.view]
+extrapolate=false
+interpolate=false
+
+[org.mate.hud]
+enabled=false
+
+[org.mate.Marco.general]
+alt-tab-expand-to-fit-title=true
+show-tab-border=false
+button-layout=':minimize,maximize,close'
+theme='Yaru'
+titlebar-font='Ubuntu Medium 11'
+
+[org.mate.Marco.global-keybindings]
+switch-windows-all='<Control><Alt>Tab'
+switch-windows-all-backward='<Control><Alt><Shift>Tab'
+
+# set ubuntu-mate (Traditional) MATE Panel layout
+
+[org.mate.panel]
+default-layout='ubuntu-mate'
+
+[org.mate.panel.general]
+object-id-list=['menu-bar', 'firefox', 'notification-area', 'indicatorappletcomplete', 'show-desktop', 'window-list', 'workspace-switcher', 'trashapplet']
+toplevel-id-list=['top', 'bottom']
+
+## top panel
+[org.mate.panel.toplevels.top]
+expand=true
+orientation='top'
+size=28
+
+## bottom panel
+[org.mate.panel.toplevels.bottom]
+expand=true
+orientation='bottom'
+size=28
+
+### top panel elements
+[org.mate.panel.menubar]
+icon-name='mate-desktop-symbolic'
+
+[org.mate.panel.objects.menu-bar]
+object-type='menu-bar'
+toplevel-id='top'
+position=0
+locked=true
+
+[org.mate.panel.objects.firefox]
+locked=true
+position=10
+launcher-location='/usr/share/applications/firefox-esr.desktop'
+toplevel-id='top'
+object-type='launcher'
+menu-path='applications:/'
+
+[org.mate.panel.objects.notification-area]
+object-type='applet'
+applet-iid='NotificationAreaAppletFactory::NotificationArea'
+toplevel-id='top'
+position=10
+relative-to-edge='end'
+locked=true
+
+[org.mate.panel.objects.indicatorappletcomplete]
+object-type='applet'
+applet-iid='IndicatorAppletCompleteFactory::IndicatorAppletComplete'
+toplevel-id='top'
+position=0
+relative-to-edge='end'
+locked=true
+ 
+### bottom panel elements
+ 
+[org.mate.panel.objectsshow-desktop]
+object-type='applet'
+applet-iid='WnckletFactory::ShowDesktopApplet'
+toplevel-id='bottom'
+position=0
+locked=true
+
+[org.mate.panel.objects.window-list]
+object-type='applet'
+applet-iid='WnckletFactory::WindowListApplet'
+toplevel-id='bottom'
+position=10
+locked=true
+
+[org.mate.panel.objects.workspace-switcher]
+object-type='applet'
+applet-iid='WnckletFactory::WorkspaceSwitcherApplet'
+toplevel-id='bottom'
+position=10
+relative-to-edge='end'
+locked=true
+
+[org.mate.panel.objects.trashapplet]
+locked=true
+position=0
+toplevel-id='bottom'
+applet-iid='TrashAppletFactory::TrashApplet'
+object-type='applet'
+relative-to-edge='end'
+
+# /set ubuntu-mate (Traditional) MATE Panel layout
+
+[org.mate.peripherals-mouse]
+cursor-size=24
+cursor-theme='Yaru'
+
+[org.mate.peripherals-touchpad]
+three-finger-click=0
+two-finger-click=0
+
+[org.mate.pluma]
+color-scheme='Yaru'
+editor-font='Ubuntu Mono 13'
+print-font-body-pango='Ubuntu Mono 9'
+print-font-header-pango='Ubuntu 11'
+print-font-numbers-pango='Ubuntu 8'
+display-line-numbers=true
+highlight-current-line=true
+auto-detected-encodings=['UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16', 'WINDOWS-1251']
+
+[org.mate.power-manager]
+icon-policy='never'
+notify-discharging=false
+notify-fully-charged=false
+notify-low-capacity=false
+notify-low-power=false
+
+[org.mate.sound]
+theme-name='Yaru'
+
+[org.mate.stickynotes]
+default-font='Ubuntu 10'
+
+[org.mate.system-monitor]
+cpu-color0="#9A0606"
+cpu-color1="#B42828"
+cpu-color2="#CD5050"
+cpu-color3="#E67F7F"
+cpu-color4="#FFB4B4"
+cpu-color5="#9A5306"
+cpu-color6="#B47028"
+cpu-color7="#CD8F50"
+cpu-color8="#E6B37F"
+cpu-color9="#FFDBB5"
+cpu-color10="#6B9A06"
+cpu-color11="#86B428"
+cpu-color12="#A4CD50"
+cpu-color13="#C4E67F"
+cpu-color14="#E6FFB3"
+cpu-color15="#066B9A"
+cpu-color16="#2886B4"
+cpu-color17="#50A5CD"
+cpu-color18="#7FC4E6"
+cpu-color19="#B3E6FF"
+cpu-color20="#21069A"
+cpu-color21="#4028B4"
+cpu-color22="#6550CD"
+cpu-color23="#907FE6"
+cpu-color24="#C0B4FF"
+cpu-color25="#870087"
+cpu-color26="#BC00BC"
+cpu-color27="#F100F1"
+cpu-color28="#FF4FFF"
+cpu-color29="#FF87FF"
+cpu-color30="#C4A000"
+cpu-color31="#EDD400"
+
+[org.mate.window-applets.window-buttons]
+behaviour='active-maximized'
+control-maximized-window=true
+padding=8
+spacing=0
+
+[org.onboard]
+layout='Compact'
+theme='Nightshade'
+key-label-font='Ubuntu'
+key-label-overrides=['RWIN::super-group', 'LWIN::super-group']
+xembed-onboard=true
+
+[org.onboard.window]
+docking-enabled=true
+force-to-top=true
+
+[org.yorba.shotwell.printing]
+titles-font='Ubuntu Bold 12'
+
+# MATE Terminal
+
+[org.mate.terminal.global]
+use-menu-accelerators=false
+use-mnemonics=true
+
+[org.mate.terminal.keybindings]
+help='disabled'
+
+[org.mate.terminal.profile]
+allow-bold=false
+background-color='#FFFFFFFFDDDD'
+bold-color='#000000000000'
+foreground-color='#000000000000'
+palette='#2E2E34343636:#CCCC00000000:#4E4E9A9A0606:#C4C4A0A00000:#34346565A4A4:#757550507B7B:#060698209A9A:#D3D3D7D7CFCF:#555557575353:#EFEF29292929:#8A8AE2E23434:#FCFCE9E94F4F:#72729F9FCFCF:#ADAD7F7FA8A8:#3434E2E2E2E2:#EEEEEEEEECEC'
+visible-name='Default'
+scrollback-unlimited=true
+
+# /MATE Terminal

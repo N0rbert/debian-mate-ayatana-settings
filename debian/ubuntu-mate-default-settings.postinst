@@ -1,7 +1,0 @@
-#!/bin/sh
-
-rm -f /usr/local/bin/firefox
-rm -f /usr/local/bin/thunderbird
-
-#DEBHELPER#
-exit 0

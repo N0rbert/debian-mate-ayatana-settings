@@ -1,0 +1,103 @@
+#!/usr/bin/env bash
+
+function autostart_clean() {
+    FILENAME="${1}"
+    if [ -e "/usr/share/mate/autostart/${FILENAME}" ] && [ -e "${HOME}/.config/autostart/${FILENAME}" ]; then
+        rm -f "${HOME}/.config/autostart/${FILENAME}"
+    fi
+}
+
+function overlay_file() {
+    local SYSTEM_FILE="/usr/share/debian-mate/settings-overlay/${1}"
+    local USER_FILE="${HOME}/.${1}"
+    local USER_DIR=$(dirname "${USER_FILE}")
+
+    # If the file doesn't exist or is zero-bytes then overlay the
+    # configuration.
+    if [ ! -f "${USER_FILE}" ] || [ ! -s "${USER_FILE}" ]; then
+        mkdir -p "${USER_DIR}"
+        cp "${SYSTEM_FILE}" "${USER_FILE}"
+    fi
+}
+
+if [ ! -d "${HOME}/.config/plank/dock1" ]; then
+    overlay_file config/plank/dock1/launchers/desktop.dockitem
+    overlay_file config/plank/dock1/launchers/firefox-esr.dockitem
+    overlay_file config/plank/dock1/launchers/caja-browser.dockitem
+    overlay_file config/plank/dock1/launchers/matecc.dockitem
+    overlay_file config/plank/dock1/launchers/mate-system-monitor.dockitem
+    overlay_file config/plank/dock1/launchers/mate-terminal.dockitem
+    overlay_file config/plank/dock1/launchers/mate-calc.dockitem
+    overlay_file config/plank/dock1/launchers/clock.dockitem
+    overlay_file config/plank/dock1/launchers/trash.dockitem
+fi
+
+overlay_file config/tilda/config_0
+overlay_file config/Webcamoid/Webcamoid.conf
+overlay_file config/Trolltech.conf
+
+# Manually copy 'start-here' MATE icon to all themes, waiting for https://github.com/getsolus/brisk-menu/pull/49 to be merged
+overlay_file icons/Adwaita/16x16/places/start-here-symbolic.svg
+overlay_file icons/Adwaita/24x24/places/start-here-symbolic.svg
+overlay_file icons/Adwaita/32x32/places/start-here-symbolic.svg
+overlay_file icons/Adwaita/48x48/places/start-here-symbolic.svg
+overlay_file icons/Adwaita/64x64/places/start-here-symbolic.svg
+overlay_file icons/Adwaita/96x96/places/start-here-symbolic.svg
+overlay_file icons/Adwaita/places/symbolic/start-here-symbolic.svg
+overlay_file icons/Adwaita/scalable/places/start-here-symbolic.svg
+overlay_file icons/breeze-dark/places/symbolic/start-here-symbolic.svg
+overlay_file icons/breeze/places/symbolic/start-here-symbolic.svg
+overlay_file icons/elementary/places/symbolic/start-here-symbolic.svg
+overlay_file icons/elementary/scalable/apps/start-here-symbolic.svg
+overlay_file icons/elementary-xfce/places/symbolic/start-here-symbolic.svg
+overlay_file icons/ePapirus/16x16/places/start-here-symbolic.svg
+overlay_file icons/ePapirus/24x24/places/start-here-symbolic.svg
+overlay_file icons/ePapirus/32x32/places/start-here-symbolic.svg
+overlay_file icons/ePapirus/48x48/places/start-here-symbolic.svg
+overlay_file icons/ePapirus/64x64/places/start-here-symbolic.svg
+overlay_file icons/ePapirus/96x96/places/start-here-symbolic.svg
+overlay_file icons/ePapirus-Dark/16x16/places/start-here-symbolic.svg
+overlay_file icons/ePapirus-Dark/24x24/places/start-here-symbolic.svg
+overlay_file icons/ePapirus-Dark/32x32/places/start-here-symbolic.svg
+overlay_file icons/ePapirus-Dark/48x48/places/start-here-symbolic.svg
+overlay_file icons/ePapirus-Dark/64x64/places/start-here-symbolic.svg
+overlay_file icons/ePapirus-Dark/96x96/places/start-here-symbolic.svg
+overlay_file icons/ePapirus-Dark/places/symbolic/start-here-symbolic.svg
+overlay_file icons/ePapirus-Dark/scalable/places/start-here-symbolic.svg
+overlay_file icons/ePapirus/places/symbolic/start-here-symbolic.svg
+overlay_file icons/ePapirus/scalable/places/start-here-symbolic.svg
+overlay_file icons/Faba/symbolic/places/start-here-symbolic.svg
+overlay_file icons/Faenza-Dark/places/scalable/start-here-symbolic.svg
+overlay_file icons/Faenza/places/scalable/start-here-symbolic.svg
+overlay_file icons/Faenza/scalable/places/start-here-symbolic.svg
+overlay_file icons/gnome/scalable/places/start-here-symbolic.svg
+overlay_file icons/hicolor/scalable/places/start-here-symbolic.svg
+overlay_file icons/HighContrast/scalable/places/start-here-symbolic.svg
+overlay_file icons/mate/scalable/places/start-here-symbolic.svg
+overlay_file icons/Mint-Y/places/symbolic/start-here-symbolic.svg
+overlay_file icons/Numix-Light/scalable/places/start-here-symbolic.svg
+overlay_file icons/Numix/scalable/places/start-here-symbolic.svg
+overlay_file icons/Obsidian/places/16/start-here-symbolic.svg
+overlay_file icons/Paper/scalable/places/start-here-symbolic.svg
+overlay_file icons/Papirus-Dark/symbolic/places/start-here-symbolic.svg
+overlay_file icons/Papirus-Light/symbolic/places/start-here-symbolic.svg
+overlay_file icons/Papirus/symbolic/places/start-here-symbolic.svg
+overlay_file icons/sugar/16x16/places/start-here-symbolic.svg
+overlay_file icons/sugar/24x24/places/start-here-symbolic.svg
+overlay_file icons/sugar/32x32/places/start-here-symbolic.svg
+overlay_file icons/sugar/48x48/places/start-here-symbolic.svg
+overlay_file icons/sugar/64x64/places/start-here-symbolic.svg
+overlay_file icons/sugar/96x96/places/start-here-symbolic.svg
+overlay_file icons/sugar/places/symbolic/start-here-symbolic.svg
+overlay_file icons/sugar/scalable/apps/start-here-symbolic.svg
+overlay_file icons/sugar/scalable/places/start-here-symbolic.svg
+overlay_file icons/Yaru/scalable/places/start-here-symbolic.svg
+
+# Now that the HUD is enabled by default at the system
+# level, any duplicate local autostart files can be removed.
+autostart_clean mate-hud.desktop
+
+# set ubuntu-mate (Traditional) MATE Panel for the first time
+if [ ! -e "${HOME}/.config/mate-panel-layout-set" ] && [ "$(gsettings get org.mate.panel default-layout)" == "'ubuntu-mate'" ] ; then
+    mate-tweak --layout ubuntu-mate && touch "${HOME}/.config/mate-panel-layout-set"
+fi
