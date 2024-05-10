@@ -25,9 +25,10 @@ $ su -
 # apt-get dist-upgrade
 # apt-get install software-properties-common python3-launchpadlib
 # add-apt-repository -y main contrib non-free non-free-firmware
+# reboot
 ```
 
-Then we need to add the repository with the package:
+Then we need to add [the repository](https://launchpad.net/~nrbrtx/+archive/ubuntu/dmas) with the package:
 
 ```sh
 sudo add-apt-repository -y "deb http://ppa.launchpad.net/nrbrtx/dmas/ubuntu jammy main"
@@ -37,11 +38,11 @@ This `debian-mate-ayatana-settings` meta-package may be installed in one of the 
 
 * to get the minimal set of packages including MATE Tweak and MATE Panel layouts (Contemporary, Cupertino, Familiar, Fedora, Mutiny, Pantheon, Redmond, Tradional), Plank, Tilda, MATE HUD, Brisk Menu, Ayatana Indicators inside MATE Indicator Applet Complete (Application, Datetime, Messages, Notifications, Power, Session, Sound) and Ayatana Settings, with green Yaru style and icon theme by the following command:
 
-        sudo apt-get install --no-install-recommends debian-mate-ayatana-settings
+      sudo apt-get install --no-install-recommends debian-mate-ayatana-settings
 
 * to get the fully featured system which looks and works like original Ubuntu MATE use:
 
-        sudo apt-get install debian-mate-ayatana-settings
+      sudo apt-get install debian-mate-ayatana-settings
 
    The installed system will have a lot of hardware-related software components like firmware, printer drivers and so on, it also has minimal set of additional useful desktop applications - Accessories (Deja Dup, GNOME Clocks, GNOME Disk Utility, GNOME Character Map, GtkHash, GNOME Maps, Midnight Commader, Seahorse Password and Keys, Plank, RedShift, GNOME Weather, X-Tile), Graphics (Simple Scan and Shotwell), Internet (Firefox ESR and Transmission), Office (Atril, GNOME Evolution and LibreOffice), Sound & video (VLC, Rhythmbox and WebCamoid), System Tools (GDebi Package Installer, GSmartControl, Htop, Package Updater, GNOME Software, Tilda) and Universal Access (Magnus, Onboard and Orca Screen Reader).
 
@@ -73,7 +74,7 @@ so user can select any of the other layouts:
 
 * Familiar
 
-    > two panel layout with a searchable menu.
+    > Two panel layout with a searchable menu.
 
     ![Familiar panel layout](.github/07-layout-familiar.png)
 
@@ -103,7 +104,7 @@ All Ayatana indicators may be configured using their special application, it is 
 
 1. This meta-package may be installed ontop of the system installed from Debian Live MATE media (for example installed from [*debian-live-12.5.0-amd64-mate.iso*](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.5.0-amd64-mate.iso)), but before installing the package one should run the below command to restore LightDM configuration:
 
-        sudo apt-get --reinstall -o Dpkg::Options::=--force-confask -o Dpkg::Options::=--force-confnew install lightdm
+       sudo apt-get --reinstall -o Dpkg::Options::=--force-confask -o Dpkg::Options::=--force-confnew install lightdm
 
 1. This meta-package may be installed also on top of LinuxMint Debian Edition (LMDE) 6 which is based on the same Debian 12 (*bookworm*).
 
