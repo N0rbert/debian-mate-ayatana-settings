@@ -1,3 +1,10 @@
+debian-mate-ayatana-settings (24.06~debian~1.1) jammy; urgency=medium
+
+  * Source /etc/profile and ~/.profile files when using LightDM
+    to fix https://bugs.debian.org/1024073
+
+ -- Norbert X <nrbrtx@gmail.com>  Thu, 20 Jun 2024 12:53:26 +0300
+
 debian-mate-ayatana-settings (24.05~debian~1.0) jammy; urgency=medium
 
   * Initial version for Debian with MATE and Ayatana Indicators
